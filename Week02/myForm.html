@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My form</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            width: 40%;
+            background-color: rgb(233, 233, 230);
+            padding: 30px;
+            margin: 30px auto;
+            border-radius: 10px;
+        }
+        .form_menu{
+            width: 60%;
+            margin: auto;
+        }
+        h2{
+            text-align: center;
+            color: coral;
+        }
+        input[type='text'],select{
+            width: 100%;
+            height: 27px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>MY PHP FORM </h2>
+        <div class="form_menu">
+            <form action="./myForm.php" method="post">
+                <label for="namefield">Name : </label><br>
+                <input type="text" name="name" id="namefield" placeholder="Nguyen Van A"><br><br>
+                <label for="idfield">ID : </label><br>
+                <input type="text" name="id" id="idfield" placeholder="2018xxxx"><br><br>
+                <label for="classfield">Class : </label><br>
+                <input type="text" name="class" id="classfield" placeholder="ICT 02 K63"><br><br>
+                <label for="universityfield">University : </label><br>
+                <select name="university" id="universityfield">
+                    <option value="Trường Đại học Bách Khoa Hà Nội">Trường Đại học Bách Khoa Hà Nội</option>
+                    <option value="Trường Đại học Kinh tế Quốc dân" selected>Trường Đại học Kinh tế Quốc dân</option>
+                    <option value="Trường Đại học Ngoại Thương">Trường Đại học Ngoại Thương</option>
+                    <option value="Trường Đại học Quốc Gia">Trường Đại học Quốc Gia</option>
+                </select>
+                <br><br>
+                <p>Hobby</p>
+                <input type="checkbox" name="hobby[]" id="footballfield" value="football">
+                <label for="footballfield">Football</label><br>
+                <input type="checkbox" name="hobby[]" id="cyclingfield" value="cycling">
+                <label for="cyclingfield">Cycling</label><br>
+                <input type="checkbox" name="hobby[]" id="basketballfield" value="basketball">
+                <label for="basketballfield">Basketball</label><br>
+                <br><br>
+                <p>Are you sure about the above answers?</p>
+                <input type="radio" name="sure" id="yesfield" value="yes">
+                <label for="yesfield">Yes</label><br>
+                <input type="radio" name="sure" id="nofield" value="no" checked>
+                <label for="nofield">No</label><br><br>
+                <input type="reset" value="Erase and Reset">
+                <input type="submit" value="Click to Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
