@@ -9,7 +9,7 @@ class DB_driver
         $host = "localhost", 
         $DbName = "web2",
         $user = "root",
-        $pass = "";
+        $pass = "Phucdz12052000@";
 
     // Hàm Kết Nối
     function connect()
