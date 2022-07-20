@@ -251,7 +251,7 @@ function addFooter()
     <div class="copy-right">
         <p>
             All rights reserved © ' . date("Y") . ' - Designed by
-            <span style="color: #eee; font-weight: bold">Lê Đức Thắng</span>
+            <span style="color: #eee; font-weight: bold">Trần Thái Phúc & Vũ Tùng Lâm</span>
         </p>
     </div>';
 }
