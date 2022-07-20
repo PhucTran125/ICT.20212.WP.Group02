@@ -92,7 +92,150 @@ function addHome()
         <div class="owl-carousel owl-theme"></div>
     </div> <!-- End Banner -->
     
-    <div class="smallbanner" style="width: 100%;"></div>';
+    <div class="smallbanner" style="width: 100%;"></div>
+
+    <div class="companysFilter">
+        <button class="companysButton" onclick="setCompanysMenu()">
+            <p>Hãng</p>
+            <div id="iconOpenMenu">▷</div>
+            <div id="iconCloseMenu" style="display: none;">▽</div>
+        </button>
+    </div>
+    <div class="companyMenu group flexContain"></div>
+
+    <div class="timNangCao">
+        <div class="flexContain">
+            <div class="pricesRangeFilter dropdown">
+                <button class="dropbtn">Giá tiền</button>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div class="promosFilter dropdown">
+                <button class="dropbtn">Khuyến mãi</button>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div class="starFilter dropdown">
+                <button class="dropbtn">Số lượng sao</button>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div class="sortFilter dropdown">
+                <button class="dropbtn">Sắp xếp</button>
+                <div class="dropdown-content"></div>
+            </div>            
+        </div>
+        
+        <div>
+            <input type="text" class="js-range-slider" id="demoSlider">
+        </div>
+
+    </div> <!-- End khung chọn bộ lọc -->
+
+    <div class="choosedFilter flexContain"></div> <!-- Những bộ lọc đã chọn -->
+    <hr>
+
+    <!-- Mặc định mới vào trang sẽ ẩn đi, nế có filter thì mới hiện lên -->
+    <div class="contain-products" style="display:none">
+    <div class="filterName">
+        <div id="divSoLuongSanPham"></div>
+        <input type="text" placeholder="Lọc trong trang theo tên..." onkeyup="filterProductsName(this)">
+        <div class="loader" style="display: none"></div>
+    </div> <!-- End FilterName -->
+
+    <ul id="products" class="homeproduct group flexContain">
+        <div id="khongCoSanPham">
+            <i class="fa fa-times-circle"></i>
+            Không có sản phẩm nào
+        </div> <!-- End Khong co san pham -->
+    </ul><!-- End products -->
+
+    <div class="pagination"></div>
+    </div>
+
+    <!-- Div hiển thị khung sp hot, khuyến mãi, mới ra mắt ... -->
+    <div class="contain-khungSanPham"></div>';
+}
+
+// Thêm chi tiết sản phẩm
+function addChiTietSanPham()
+{
+    echo '
+    <div class="chitietSanpham" style="min-height: 85vh">
+        <h1></h1>
+        <div class="rowdetail group">
+            <div class="picture">
+                <img src="">
+            </div>
+            <div class="price_sale">
+                <div class="area_price"> </div>
+                <div class="ship" style="display: none;">
+                    <i class="fa fa-clock-o"></i>
+                    <div>NHẬN HÀNG TRONG NGÀY</div>
+                </div>
+                <div class="area_promo">
+                    <strong>Mô tả sản phẩm</strong>
+                    <div class="promo">
+                        <i class="fa fa-check-circle"></i>
+                        <div id="detailPromo"> </div>
+                    </div>
+                </div>
+                <div class="policy">
+                    <div>
+                        <i class="fa fa-archive"></i>
+                        <p>Trong hộp có: Sản phẩm & phụ kiện được tặng đi kèm </p>
+                    </div>
+                    <div class="last">
+                        <i class="fa fa-retweet"></i>
+                        <p>1 đổi 1 trong 1 tuần nếu lỗi, đổi sản phẩm tại nhà trong 1 ngày.</p>
+                    </div>
+                </div>
+                <div class="area_order">
+                    <!-- nameProduct là biến toàn cục được khởi tạo giá trị trong phanTich_URL_chiTietSanPham -->
+                    <a class="buy_now" onclick="themVaoGioHang(maProduct, nameProduct);">
+                        <h3><i class="fa fa-plus"></i> Thêm vào giỏ hàng</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="info_product" style="display:none">
+                <h2>Thông số kỹ thuật</h2>
+                <ul class="info">
+
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="comment-area">
+            <div class="guiBinhLuan">
+                <div class="stars">
+                    <form action="">
+                        <input class="star star-5" id="star-5" value="5" type="radio" name="star"/>
+                        <label class="star star-5" for="star-5" title="Tuyệt vời"></label>
+
+                        <input class="star star-4" id="star-4" value="4" type="radio" name="star"/>
+                        <label class="star star-4" for="star-4" title="Tốt"></label>
+
+                        <input class="star star-3" id="star-3" value="3" type="radio" name="star"/>
+                        <label class="star star-3" for="star-3" title="Tạm"></label>
+
+                        <input class="star star-2" id="star-2" value="2" type="radio" name="star"/>
+                        <label class="star star-2" for="star-2" title="Khá"></label>
+
+                        <input class="star star-1" id="star-1" value="1" type="radio" name="star"/>
+                        <label class="star star-1" for="star-1" title="Tệ"></label>
+                    </form>
+                </div>
+                <textarea maxlength="250" id="inpBinhLuan" placeholder="Viết suy nghĩ của bạn vào đây..."></textarea>
+                <input id="btnBinhLuan" type="button" onclick="checkGuiBinhLuan()" value="GỬI BÌNH LUẬN">
+            </div>
+            <!-- <h2>Bình luận</h2> -->
+            <div class="container-comment">
+                <div class="rating"></div>
+                <div class="comment-content">
+                </div>
+            </div>
+        </div>
+    </div>';
 }
 
 // Thêm footer
@@ -108,7 +251,7 @@ function addFooter()
     <div class="copy-right">
         <p>
             All rights reserved © ' . date("Y") . ' - Designed by
-            <span style="color: #eee; font-weight: bold">Trần Thái Phúc & Vũ Tùng Lâm</span>
+            <span style="color: #eee; font-weight: bold">Lê Đức Thắng</span>
         </p>
     </div>';
 }
