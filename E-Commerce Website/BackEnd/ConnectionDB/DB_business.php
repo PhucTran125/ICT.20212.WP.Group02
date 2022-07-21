@@ -63,4 +63,24 @@ class DB_business extends DB_driver
         return $this->get_list($sql);
     }
 
+    // hàm get staff
+    function select_staff($idstaff)
+    {
+        $sql = "select * from " . $this->_table_name . " where " . $this->_key . " = '" . $idstaff . "'";
+        return $this->get_list($sql);
+    }
+
+    // hàm get staff
+    function select_employee()
+    {
+        $sql = "select * from " . $this->_table_name . " where MaQuyen = 2";
+        return $this->get_list($sql);
+    }
+
+    // hàm get staff
+    function select_ctm()
+    {
+        $sql = "select * from " . $this->_table_name . " where MaQuyen = 1";
+        return $this->get_list($sql);
+    }
 }
