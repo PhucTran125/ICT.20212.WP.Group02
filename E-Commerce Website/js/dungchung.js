@@ -18,7 +18,7 @@ function getListGioHang() {
     return JSON.parse(localStorage.getItem('giohang')); 
 }
 
-function setListGioHang(list) {
+function setListInCart(list) {
     localStorage.setItem('giohang', JSON.stringify(list));
 }
 
@@ -44,7 +44,7 @@ function addToGioHang(masp) {
         })
     }
 
-    setListGioHang(currentList);
+    setListInCart(currentList);
 }
 
 function getSoLuongGioHang() {
@@ -269,7 +269,7 @@ function checkDangXuat(onSuccess) {
                             title: "Đăng xuất thành công"
                         }).then((result) => {
                             capNhatThongTinUser();
-                            setListGioHang(null);
+                            setListInCart(null);
                             animateCartNumber();
                         });
 
