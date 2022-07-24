@@ -219,8 +219,6 @@ function makePayment() {
 }
 
 function htmlForMakePayment(userHienTai) {
-	console.log('abc')
-
 	$("#thongtinthanhtoan").html(`
 		<form>
 		  	<div class="form-group">

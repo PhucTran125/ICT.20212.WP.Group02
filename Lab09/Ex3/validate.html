@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register to dum club</title>
+    <link rel="stylesheet" href="validationSytle.css">
+    <script src="validation.js"></script>
+</head>
+
+<body onload=>
+    <h1>Registration form</h1>
+
+    <form name="registration" onsubmit="return formValidation();">
+        <ul>
+            <li><label for="username">Username: </label></li>
+            <li><input type="text" name="username" id="username"></li>
+            <li><label for="password">Password: </label></li>
+            <li><input type="text" name="password" id="password"></li>
+            <li><label for="email">Email: </label></li>
+            <li><input type="text" name="email" id="email"></li>
+            <li><label for="telephone">Telephone: </label></li>
+            <li><input type="text" name="telephone" id="telephone"></li>
+            <li><input type="submit" name="submit" value="Submit" /></li>
+        </ul>
+    </form>
+</body>
+
+</html>

@@ -59,10 +59,29 @@
 				    <form action="" onsubmit="return confirmPayment()">
 						<div class="modal-body" id="thongtinthanhtoan"></div>
 						<div class="modal-footer">
-				        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+				        	<button type="button" class="btn btn-secondary" data-target="#notiModal" data-dismiss="modal">Hủy</button>
 				        	<button type="submit" class="btn btn-primary" id="btnXacNhan">Xác nhận</button>
 				      	</div>
 				    </form>
+		    	</div>
+		  	</div>
+		</div>
+		
+		<div class="modal fade" id="notiModal" role="dialog" aria-labelledby="notiModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+				<div class="modal-content">
+				    <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel" >Đặt hàng thành công</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				    </div>
+					<div class="modal-body" id="">
+						<span>Bạn đã đặt hàng thành công, đơn hàng của bạn sẽ được giao trong vài ngày tới. Bạn có thể kiểm tra thông tin đơn hàng tại Trang cá nhân. Cảm ơn bạn!</span>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary" id="btnXacNhan">Xác nhận</button>
+					</div>
 		    	</div>
 		  	</div>
 		</div>
