@@ -13,5 +13,5 @@ REFRESH_TOKEN_SECRET = 5947e4e029d1e8817e09730a88f2ee217e51b5b47e1cf7dcef704bffa
 SESS_NAME = 'semail'
 SESS_SECRET = process.env.ACCESS_TOKEN_SECRET
 SESS_LIFETIME = 3600000
-5. Open MySql WorkBench and execute file FinalQuery to initialize database.
+5. Open MySql WorkBench and execute file SQL script to initialize database.
 6. Run the project by command: npm run devStart

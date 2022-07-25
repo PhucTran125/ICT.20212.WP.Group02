@@ -131,11 +131,11 @@
         <!-- Start Pay now function -->
         <script>
             document.getElementById("submitBtn").onclick = function () {
-                // document.getElementById("fullName").innerHTML = "Name: " + sessionStorage.getItem("firstName") + " " + sessionStorage.getItem("lastName");
-                // document.getElementById("displayAddress").innerHTML = "Address: " + sessionStorage.getItem("apartment") + ", " + sessionStorage.getItem("address") + ", " + sessionStorage.getItem("city");
-                // document.getElementById("shippingMethod").innerHTML = "Shipping method: " + sessionStorage.getItem("method") + " Delivery";
-                // document.getElementById("totalCost").innerHTML = "Total cost: $" + sessionStorage.getItem("total") + ".00";
-                // document.getElementById("successfully").style.display = "inline-block";
+                document.getElementById("fullName").innerHTML = "Name: " + sessionStorage.getItem("firstName") + " " + sessionStorage.getItem("lastName");
+                document.getElementById("displayAddress").innerHTML = "Address: " + sessionStorage.getItem("apartment") + ", " + sessionStorage.getItem("address") + ", " + sessionStorage.getItem("city");
+                document.getElementById("shippingMethod").innerHTML = "Shipping method: " + sessionStorage.getItem("method") + " Delivery";
+                document.getElementById("totalCost").innerHTML = "Total cost: $" + sessionStorage.getItem("total") + ".00";
+                document.getElementById("successfully").style.display = "inline-block";
                 var radioBtn = document.getElementsByClassName("radioBtn");
                 var choice = "";
                 Array.from(radioBtn).forEach(function (element) {
@@ -143,9 +143,6 @@
                         choice = element.value;
                     }
                 })
-                console.log('"come heree');
-
-                console.log(sessionStorage.getItem("totalCost"))
                 axios.patch('/orderFinish', {
                     contact: sessionStorage.getItem("email-tel"),
                     addr: sessionStorage.getItem("address"),
@@ -155,25 +152,6 @@
                     payMeth: choice,
                     totalCost: sessionStorage.getItem("total")
                 })
-                    .then(function (response) {
-                        console.log(response.data);
-                        const { orderID } = response.data
-                        console.log(orderID);
-                        if (choice === "momo") {
-                            // Request momo payment url
-                            axios.post('/momo/buy', {
-                                contact: sessionStorage.getItem("email-tel"),
-                                orderID,
-                                totalCost: sessionStorage.getItem("total")
-                            }).then(({ data: { payUrl } }) => {
-                                // Redirect to momo page
-                                window.location.href = payUrl;
-                            })
-                        }
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
             }
         </script>
         <!-- End Pay now function -->
